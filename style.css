@@ -1,15 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
-
 *{
     margin: 0;
-    padding: 10;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-
 }
+
 html {
     scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #003366;
+    --secondary-color: #A8FBD3;
+    --accent-color: #18f088;
+    --text-light: #98f5fc;
+    --gradient-bg: linear-gradient(135deg, #001122 0%, #003366 50%, #002244 100%);
 }
 
 .main{
@@ -21,32 +28,27 @@ html {
     position: relative;
     font-family: sans-serif;
     background: linear-gradient(135deg, #001122, #003366);
-    
 }
+
 .name{
-    font-size: 25px;
+    font-size: clamp(18px, 4vw, 25px);
     font-weight: bold;
-    color: #003366;
+    color: #A8FBD3;
     margin-top: 3%;
     margin-left: 5%;
 }
 
 .navbar {
     padding: 15px 10px;
-    width: 85%;
+    width: min(85%, 1200px);
     display: flex;
-    margin: auto;
-    margin: 50px 0;
+    margin: 50px auto;
     align-items: center;
     justify-content: space-between;
- 
-
-    
 }
 
 ul{
     margin-top: -4%;
-    
 }
 
 ul li{
@@ -54,11 +56,12 @@ ul li{
     padding: 10px 16px;
     list-style: none;
 }
+
 ul li a{
     text-decoration: none;
     color: rgb(150, 207, 207);
-    margin-top: -3% ;
-    font-size: 16px;
+    margin-top: -3%;
+    font-size: clamp(14px, 2.5vw, 16px);
     font-weight: bold;
 }
 
@@ -71,14 +74,14 @@ ul li a:hover{
     margin-left: 7%;
     margin-right: 6%;
 }
+
 .info h1{
-    font-size: 65px;
+    font-size: clamp(32px, 8vw, 65px);
     color: #A8FBD3;
-    
 }
 
 .info h3{
-    font-size: 25px;
+    font-size: clamp(18px, 4vw, 25px);
     color: #A8FBD3;
     margin: 20px 0;
     font-weight: 500;
@@ -86,7 +89,6 @@ ul li a:hover{
 
 .info span{
     color: #18f088;
-    
 }
 
 .info a{
@@ -94,24 +96,22 @@ ul li a:hover{
     text-decoration: none;
     margin: 26px 0;
     padding: 10px 18px;
-    background: rgb(36, 32, 30);
+    background: linear-gradient(45deg, #18f088, #00cb76);
     border-radius: 10px;
-    display: inline-block;  
-
+    display: inline-block;
+    font-size: clamp(14px, 2.5vw, 16px);
 }
 
 .info a:hover{
     background: rgb(59, 174, 209);
-    
 }
+
 .photo{
     position: absolute;
     bottom: 0;
-    right: 100px;
-    width: 35%;
+    right: clamp(20px, 10vw, 100px);
+    width: min(35%, 400px);
     height: 75%;
-    
-    
 }
 
 .photo img{
@@ -123,45 +123,38 @@ ul li a:hover{
     transform: translate(-50%);
     transition: left 1s ease-in;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .about, .skills, .projects{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: #f5f5f5;
     position: relative;
     font-family: sans-serif;
-    padding: 50px 0;
+    padding: clamp(30px, 8vw, 50px) clamp(15px, 5vw, 50px);
     box-sizing: border-box;
-}  
+}
+
 .about h1, .skills h1{
     text-align: center;
-    font-size: 40px;
+    font-size: clamp(28px, 6vw, 40px);
     color: #A8FBD3;
     margin-bottom: 20px;
 }
+
 .about p, .skills p.experience p{
     text-align: center;
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 20px);
     color: #A8FBD3;
-   margin : 0 20%;
-}
-
-.about {
-    width: 100%;
-    height: 100vh;
-    background:  linear-gradient(135deg, #001122, #003366);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-   
+    margin: 0 clamp(10px, 20%, 20%);
 }
 
 .about {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(135deg, #001122 0%, #003366 50%, #002244 100%);
-    padding: 60px 20px;
+    padding: clamp(40px, 8vw, 60px) clamp(15px, 5vw, 20px);
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
@@ -173,15 +166,16 @@ ul li a:hover{
 .about-box {
     background: #fff;
     border-radius: 15px;
-    padding: 40px;
-    max-width: 800px;
+    padding: clamp(25px, 6vw, 40px);
+    max-width: min(800px, 90vw);
     width: 100%;
     box-shadow: 0 15px 35px rgba(0, 17, 34, 0.2);
     border: 2px solid rgba(0, 51, 102, 0.1);
     overflow: hidden;
 }
+
 .about-box p {
-    font-size: 18px;
+    font-size: clamp(16px, 2.5vw, 18px);
     color: #333;
     line-height: 1.8;
     text-align: center;
@@ -192,7 +186,7 @@ ul li a:hover{
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(135deg, #001122 0%, #003366 50%, #002244 100%);
-    padding: 60px 20px;
+    padding: clamp(40px, 8vw, 60px) clamp(15px, 5vw, 20px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -201,26 +195,26 @@ ul li a:hover{
 }
 
 .skills h1 {
-    font-size: 42px;
+    font-size: clamp(28px, 6vw, 42px);
     color: #A8FBD3;
-    margin-bottom: 50px;
+    margin-bottom: clamp(30px, 6vw, 50px);
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: clamp(15px, 3vw, 20px);
+    max-width: min(1000px, 95vw);
     width: 100%;
 }
 
 .skill-item {
-    background: #fff; /* Pure white */
+    background: #fff;
     border: 2px solid rgba(0, 51, 102, 0.2);
     border-radius: 15px;
-    padding: 20px 25px;
+    padding: clamp(18px, 4vw, 25px) clamp(15px, 3vw, 20px);
     text-align: center;
     transition: all 0.3s ease;
     box-shadow: 0 8px 25px rgba(0, 17, 34, 0.15);
@@ -232,32 +226,30 @@ ul li a:hover{
 .experience{
     width: 100%;
     min-height: 100vh;
-    background:linear-gradient(135deg, #001122 0%, #003366 50%, #002244 100%);;
+    background: linear-gradient(135deg, #001122 0%, #003366 50%, #002244 100%);
     position: relative;
     font-family: sans-serif;
-    padding: 50px 0;
+    padding: clamp(30px, 8vw, 50px) clamp(15px, 5vw, 20px);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .experience h1 {
-    font-size: 36px;
+    font-size: clamp(24px, 6vw, 36px);
     color: #A8FBD3;
-    margin-bottom: 40px;
+    margin-bottom: clamp(25px, 5vw, 40px);
     text-align: center;
 }
 
 .experience-box{
     background: #fdfdfc;
     border-radius: 8px;
-    padding: 20px 22px;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 760px;
+    padding: clamp(18px, 4vw, 22px) clamp(15px, 3vw, 20px);
+    margin: clamp(15px, 3vw, 20px) auto;
+    width: min(90%, 760px);
     transition: transform 0.18s ease, box-shadow 0.18s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -269,14 +261,14 @@ ul li a:hover{
 
 .experience-box h2{
     margin: 0 0 8px 0;
-    color:#00cb76;
-    font-size: 20px;
+    color: #00cb76;
+    font-size: clamp(18px, 3vw, 20px);
     font-weight: 600;
 }
 
 .experience-box .date{
     color: #666;
-    font-size: 14px;
+    font-size: clamp(12px, 2vw, 14px);
     margin-bottom: 15px;
     font-style: italic;
 }
@@ -290,62 +282,51 @@ ul li a:hover{
     color: #333;
     line-height: 1.6;
     margin-bottom: 8px;
-    font-size: 16px;
+    font-size: clamp(14px, 2.5vw, 16px);
     list-style: none;
-}
-
-@media (max-width: 768px) {
-    .experience {
-        padding: 30px 15px;
-    }
-    
-    .experience-box {
-        width: 95%;
-        padding: 18px;
-    }
-    
-    .experience h1 {
-        font-size: 28px;
-    }
 }
 
 .social-media{
     position: absolute;
     top: 75%;
-    left: 10%;
+    left: clamp(5%, 10vw, 10%);
     display: flex;
-    font-display: auto;
-    gap: 20px;
+    gap: clamp(15px, 3vw, 20px);
+    flex-wrap: wrap;
 }
 
 .social-media a{
     text-decoration: none;
     color: #000;
-    font-size: 25px;
-    padding: 8px 20px;
+    font-size: clamp(20px, 4vw, 25px);
+    padding: clamp(8px, 2vw, 12px) clamp(15px, 3vw, 20px);
     background-color: #ccc;
     text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .social-media a:hover{
     background-color: green;
     color: white;
+    transform: translateY(-2px);
 }
+
 .contact{
     position: relative;
     min-height: 100vh;
-    padding: 50px 100px;
+    padding: clamp(30px, 8vw, 50px) clamp(20px, 10vw, 100px);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     max-width: 100%;
     text-align: center;
-    background:linear-gradient(135deg, #001122 0%, #003366 50%, #002244 100%);;
+    background: linear-gradient(135deg, #001122 0%, #003366 50%, #002244 100%);
 }
 
 .contact h2{
-    font-size: 36px;
+    font-size: clamp(24px, 6vw, 36px);
     margin-bottom: 20px;
     font-weight: 500;
     color: #A8FBD3;
@@ -355,70 +336,71 @@ ul li a:hover{
     font-weight: 300;
     color: #98f5fc;
     line-height: 1.6;
-
+    font-size: clamp(14px, 2.5vw, 16px);
 }
 
 .container{
-    width: 800px;
-    margin-top: 30px;
+    width: min(800px, 95vw);
+    margin-top: clamp(20px, 5vw, 30px);
     align-items: center;
     justify-content: center;
     display: flex;
-    }
+}
 
 .container .contactInfo{
     width: 50%;
     display: flex;
     flex-direction: column;
-    }
+}
 
 .container .contactInfo .box{
     position: relative;
-    padding: 20px;
+    padding: clamp(15px, 3vw, 20px);
     display: flex;
     align-items: center;
 }
 
 .container .contactInfo .box .icon{
-    min-width: 60px;
-    height: 60px;
+    min-width: clamp(50px, 8vw, 60px);
+    height: clamp(50px, 8vw, 60px);
     background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    font-size: 22px;
+    font-size: clamp(18px, 3vw, 22px);
 }
 
 .container .contactInfo .box .text{
-    font-size: 16px;
+    font-size: clamp(14px, 2.5vw, 16px);
     color: #fff;
-    margin-left: 20px;
+    margin-left: clamp(15px, 3vw, 20px);
     font-weight: 300;
     display: flex;
     flex-direction: column;
 }
 
-    .container .contactInfo .box .text h3{
+.container .contactInfo .box .text h3{
     font-weight: 500;
     color: #00bcd4;
+    font-size: clamp(16px, 3vw, 18px);
 }
 
 .contactForm{
     width: 40%;
-    padding: 40px;
+    padding: clamp(25px, 5vw, 40px);
     background: rgba(255, 255, 255, 0.95);
     border-radius: 10px;
     backdrop-filter: blur(10px);
 }
 
 .contactForm h2{
-    font-size: 30px;
+    font-size: clamp(20px, 4vw, 30px);
     font-weight: 500;
     color: #333;
 }
 
-    .contactForm .inputBox{
+.contactForm .inputBox{
     position: relative;
     width: 100%;
     margin-top: 10px;
@@ -428,7 +410,7 @@ ul li a:hover{
 .contactForm .inputBox textarea{
     width: 100%;
     padding: 5px 0;
-    font-size: 16px;
+    font-size: clamp(14px, 2.5vw, 16px);
     border: none;
     border-bottom: 2px solid #333;
     margin: 10px 0;
@@ -442,7 +424,7 @@ ul li a:hover{
     position: absolute;
     left: 0;
     top: 15px;
-    font-size: 16px;
+    font-size: clamp(14px, 2.5vw, 16px);
     color: #999;
     pointer-events: none;
     transition: 0.3s;
@@ -453,7 +435,7 @@ ul li a:hover{
 .contactForm .inputBox textarea:focus ~ span,
 .contactForm .inputBox textarea:valid ~ span {
     top: -5px;
-    font-size: 12px;
+    font-size: clamp(10px, 2vw, 12px);
     color: #00bcd4;
 }
 
@@ -461,27 +443,430 @@ ul li a:hover{
     background: #00bcd4;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
     cursor: pointer;
     border-radius: 5px;
+    font-size: clamp(14px, 2.5vw, 16px);
 }
 
 .contactForm .inputBox input[type="submit"]:hover {
     background: #008ba3;
 }
 
-@media (max-width: 991px){
-    .contact{
-        padding: 50px;
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1000px;
     }
+    
+    .navbar {
+        max-width: 1200px;
+    }
+    
+    .name {
+        color: #A8FBD3;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .photo {
+        right: 50px;
+        width: 40%;
+    }
+    
+    .info {
+        margin-right: 45%;
+    }
+    
+    .name {
+        color: #A8FBD3;
+    }
+    
+    .navbar {
+        width: 90%;
+        margin: 40px auto;
+    }
+    
+    ul li {
+        padding: 8px 14px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar {
+        width: 95%;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 30px auto;
+    }
+    
+    .name {
+        color: #A8FBD3;
+        text-align: center;
+        margin: 20px auto;
+    }
+    
+    .main {
+        text-align: center;
+    }
+    
+    ul {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    ul li {
+        padding: 8px 12px;
+    }
+    
+    .info {
+        margin: 0 5%;
+    }
+    
+    .photo {
+        position: relative;
+        right: auto;
+        width: 100%;
+        height: 300px;
+        margin-top: 30px;
+    }
+    
+    .photo img {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 250px;
+        height: 250px;
+    }
+    
+    .social-media {
+        position: relative;
+        top: auto;
+        left: auto;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .container {
         flex-direction: column;
-    }
-    .container .contactInfo {
-        margin-top: 40px;
-    }
-    .container .contactInfo,
-    .contactForm{
         width: 100%;
     }
+    
+    .container .contactInfo,
+    .contactForm {
+        width: 100%;
+        max-width: 600px;
+    }
+    
+    .container .contactInfo {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .main {
+        padding: 20px 0;
+        min-height: 100vh;
+        height: auto;
+    }
+    
+    .name {
+        text-align: center;
+        margin: 20px 0 10px 0;
+        color: #A8FBD3;
+        font-size: 22px;
+    }
+    
+    .navbar {
+        width: 100%;
+        margin: 20px auto;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    ul {
+        margin-top: 0;
+        width: 100%;
+    }
+    
+    ul li {
+        display: block;
+        margin: 8px 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    ul li a {
+        display: block;
+        padding: 15px 20px;
+        background: rgba(168, 251, 211, 0.15);
+        border-radius: 12px;
+        margin: 0;
+        font-size: 16px;
+        border: 1px solid rgba(168, 251, 211, 0.2);
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+    
+    ul li a:hover {
+        background: rgba(168, 251, 211, 0.25);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .info {
+        margin: 20px 5%;
+        text-align: center;
+    }
+    
+    .info h1 {
+        line-height: 1.2;
+    }
+    
+    .info a {
+        margin: 15px auto;
+        display: inline-block;
+    }
+    
+    .photo {
+        position: relative;
+        right: auto;
+        width: 100%;
+        height: 280px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .photo img {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: none;
+        width: 200px;
+        height: 200px;
+    }
+    
+    .social-media {
+        position: relative;
+        top: auto;
+        left: auto;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 15px;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .container {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+    
+    .container .contactInfo,
+    .contactForm {
+        width: 100%;
+    }
+    
+    .experience {
+        padding: 30px 15px;
+    }
+    
+    .experience-box {
+        width: 100%;
+        margin: 15px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    
+    .name {
+        font-size: 20px;
+        margin: 15px 0 10px 0;
+    }
+    
+    ul li a {
+        padding: 12px 18px;
+        font-size: 15px;
+    }
+    
+    .info {
+        margin: 15px 3%;
+    }
+    
+    .info h1 {
+        font-size: 28px;
+    }
+    
+    .info h3 {
+        font-size: 18px;
+    }
+    
+    .photo {
+        height: 240px;
+    }
+    
+    .photo img {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .about-box {
+        margin: 0;
+        border-radius: 10px;
+    }
+    
+    .contact {
+        padding: 20px 15px;
+    }
+    
+    .social-media {
+        gap: 10px;
+    }
+    
+    .social-media a {
+        padding: 8px 12px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .name {
+        font-size: 18px;
+    }
+    
+    ul li a {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .info h1 {
+        font-size: 24px;
+    }
+    
+    .info h3 {
+        font-size: 16px;
+    }
+    
+    .photo img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container,
+    .navbar,
+    .about-box,
+    .skills-container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .photo img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .about-box,
+    .skill-item,
+    .experience-box {
+        background: rgba(255, 255, 255, 0.95);
+    }
+}
+
+@media print {
+    .social-media,
+    .contactForm {
+        display: none;
+    }
+    
+    * {
+        background: white !important;
+        color: black !important;
+    }
+}
+     /*responsive menu */
+#burger, #close {
+  font-size: 24px;
+  color: #A8FBD3;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 22px;
+  right: 18px;
+  z-index: 2000;
+}
+
+/* make close sit exactly where burger is */
+#close {
+  right: 60px; /* so icons don't overlap; tweak if needed */
+}
+
+/* mobile layout */
+@media (max-width: 768px) {
+  .navbar { position: relative; }
+
+  /* hide original horizontal list, make it a vertical overlay */
+  .navbar ul {
+    display: none !important;
+    flex-direction: column;
+    background: rgba(0, 17, 34, 0.98);
+    position: absolute;
+    top: 64px;
+    right: 0;
+    width: 100%;
+    padding: 18px 8px;
+    text-align: center;
+    gap: 12px;
+    z-index: 1500;
+  }
+
+  /* show when JS adds .show */
+  .navbar ul.show {
+    display: flex !important;
+  }
+
+  /* show burger icon and hide close by default */
+  #burger { display: block !important; }
+  #close  { display: none !important; }
+
+  /* when menu is open (nav ul has .show) make close visible and burger hidden */
+  .navbar ul.show ~ #burger { display: none !important; }
+  .navbar ul.show ~ #close  { display: block !important; }
+
+  /* make list items full width and easier to tap */
+  .navbar ul li { width: 100%; margin: 6px 0; }
+  .navbar ul li a { display: block; padding: 12px 8px; }
 }
