@@ -26,3 +26,4 @@ dist-ssr
 # Server
 dist-server
 .env
+.env.example

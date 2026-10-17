@@ -12,8 +12,18 @@ Built with **TypeScript** end to end:
 
 ```bash
 npm install
-cp .env.example .env   # fill in SMTP settings to enable the contact form
 npm run dev            # Express on :5000 + Vite on :5173 (proxies /api)
+```
+
+To enable the contact form, create a `.env` file in the project root with your SMTP settings (it is git-ignored):
+
+```
+PORT=5000
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=<your Gmail address>
+SMTP_PASS=<Gmail App Password>
+CONTACT_TO=<address that receives messages>
 ```
 
 Open http://localhost:5173.
