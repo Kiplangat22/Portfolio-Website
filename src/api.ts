@@ -1,4 +1,4 @@
-import type { ApiError, ContactMessage, Portfolio } from '../shared/types';
+import type { ApiError, ContactMessage } from '../shared/types';
 
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
     const res = await fetch(url, init);
@@ -8,8 +8,6 @@ async function request<T>(url: string, init?: RequestInit): Promise<T> {
     }
     return body as T;
 }
-
-export const getPortfolio = () => request<Portfolio>('/api/portfolio');
 
 export const sendContactMessage = (message: ContactMessage) =>
     request<{ ok: true }>('/api/contact', {

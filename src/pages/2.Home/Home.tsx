@@ -1,69 +1,72 @@
 import { ReactTyped } from "react-typed";
 import { HiDownload } from 'react-icons/hi'
 import type { Profile } from "../../../shared/types";
-import About from "../3.About/About";
+import { HeroDashboard } from "../../components/HeroDashboard";
+import { LocalClock } from "../../components/LocalClock";
 
 
 export const Home = ({ profile }: { profile: Profile }) => {
+    const city = profile.location.split(',')[0];
+
     return (
-        <>
-            <section id="home" className="hero-bg min-h-screen flex items-center justify-center pt-20 md:pt-16 pb-8 text-text-light relative">
-                {/* Animated background elements */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse-slow"></div>
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-                </div>
+        <section id="home" className="hero-bg min-h-[100svh] md:min-h-[86vh] flex items-center justify-center pt-24 md:pt-20 pb-20 text-text-light relative">
+            {/* Faded dashboard wireframe behind the hero */}
+            <HeroDashboard />
 
-                {/* Content container with max-width to match other sections */}
-                <div className="w-full max-w-6xl mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-center items-center z-10">
-                    <div className="w-full md:w-1/2 flex justify-center items-center animate-slide-in-left">
-                        <div className="pb-8">
-                            <p className="text-primary font-medium mb-2 tracking-wider">👋 Welcome to my portfolio</p>
-                            <h1 className="text-3xl md:text-5xl font-bold mb-4">
-                                Hi, I'm{' '}
-                                <span className='gradient-text'>
-                                    <ReactTyped
-                                        strings={profile.roles}
-                                        typeSpeed={80}
-                                        backSpeed={50}
-                                        loop />
-                                </span>
-                            </h1>
-
-                            <p className="text-lg md:text-xl leading-8 text-gray-300 mb-6">
-                                Data Analyst and Product Operations Associate at <span className="text-primary font-medium">SunCulture</span>, using <span className="text-primary font-medium">Python</span>, <span className="text-primary font-medium">SQL</span>, <span className="text-primary font-medium">Tableau</span> and <span className="text-primary font-medium">Power BI</span> to turn data into better decisions.
-                                <br className="hidden md:block" /><br className="hidden md:block" />
-                                I monitor product health, automate and standardize processes, and build reports and dashboards that drive efficient operations and sustainable growth.
-                            </p>
-
-                            <div className="flex flex-wrap gap-4">
-                                <a href={profile.resumeUrl} download className="btn-glow flex items-center gap-2 text-lg">
-                                    <span>Download Resume</span>
-                                    <HiDownload size={22} />
-                                </a>
-                                <a href="#contact" className="btn-outline flex items-center gap-2 text-lg">
-                                    <span>Let's Talk</span>
-                                </a>
-                            </div>
-                        </div>
+            <div className="w-full max-w-6xl mx-auto px-4 md:px-8 flex flex-col-reverse md:flex-row justify-center items-center gap-12 md:gap-8 z-10">
+                <div className="w-full md:w-[58%] animate-slide-in-left">
+                    <div className="flex flex-wrap items-center gap-3 mb-6">
+                        <LocalClock city={city} timeZone={profile.timeZone} />
+                        <span className="text-sm text-gray-400">{profile.role}</span>
                     </div>
 
-                    <div className="w-full md:w-1/2 flex justify-center items-center animate-slide-in-right">
-                        <div className="relative">
-                            {/* Glow effect behind image */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-2xl opacity-30 animate-pulse-slow"></div>
-                            <div className="card-border-gradient p-1 rounded-full">
-                                <img
-                                    src={profile.photoUrl}
-                                    alt={profile.name}
-                                    className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover float-element"
-                                />
-                            </div>
+                    <p className="hand-note text-3xl md:text-4xl -rotate-2 mb-1">Habari! 👋</p>
+                    <h1 className="font-display text-5xl md:text-7xl font-semibold tracking-tight leading-[1.05] mb-5">
+                        I'm {profile.shortName}.
+                    </h1>
+                    <p className="font-display text-2xl md:text-3xl text-gray-300 mb-6 min-h-[2.5rem]">
+                        I turn data into{' '}
+                        <span className="italic text-primary">
+                            <ReactTyped strings={profile.heroPhrases} typeSpeed={70} backSpeed={40} backDelay={1800} loop />
+                        </span>
+                    </p>
+
+                    <p className="text-lg leading-8 text-gray-300 mb-8 max-w-xl">{profile.summary}</p>
+
+                    <div className="flex flex-wrap gap-4">
+                        <a href="#contact" className="btn-glow flex items-center gap-2 text-lg">
+                            Let's talk
+                        </a>
+                        <a href={profile.resumeUrl} download className="btn-outline flex items-center gap-2 text-lg">
+                            <span>Download resume</span>
+                            <HiDownload size={20} />
+                        </a>
+                    </div>
+                </div>
+
+                <div className="w-full md:w-[42%] flex justify-center items-center animate-slide-in-right">
+                    <div className="relative">
+                        {/* Soft warm glow behind an organic, slowly morphing photo frame */}
+                        <div className="absolute -inset-6 bg-gradient-to-br from-primary/25 via-transparent to-warm/20 blur-2xl rounded-full" />
+                        <div className="relative w-64 h-64 md:w-80 md:h-80 p-[3px] bg-gradient-to-br from-primary to-warm animate-blob overflow-hidden shadow-card">
+                            <img
+                                src={profile.photoUrl}
+                                alt={`Portrait of ${profile.name}`}
+                                className="w-full h-full object-cover bg-dark animate-blob"
+                            />
+                        </div>
+
+                        {/* Handwritten annotation */}
+                        <div className="hidden sm:flex absolute -left-28 md:-left-32 bottom-6 items-end gap-1 rotate-[-8deg]" aria-hidden="true">
+                            <span className="hand-note text-2xl">that's me!</span>
+                            <svg width="64" height="40" viewBox="0 0 64 40" fill="none" className="text-warm mb-3">
+                                <path d="M2 30 C 20 38, 40 30, 58 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                                <path d="M48 9 L 59 9 L 57 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
                         </div>
                     </div>
                 </div>
-            </section>
-            <About summary={profile.summary} />
-        </>
+            </div>
+        </section>
     )
 }

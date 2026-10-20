@@ -4,7 +4,7 @@ import path from 'node:path';
 import app from './app.js';
 import { isMailerConfigured } from './mailer.js';
 
-const PORT = Number(process.env.PORT ?? 5000);
+const PORT = Number(process.env.PORT ?? 5050);
 
 // In production, serve the built React app (npm run build) from the same server
 const clientDist = path.resolve(process.cwd(), 'dist');

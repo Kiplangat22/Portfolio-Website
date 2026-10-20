@@ -1,15 +1,30 @@
-import type { Portfolio } from '../../shared/types.js';
+import type { Portfolio } from './types.js';
 
 // Single source of truth for the portfolio content (taken from Kevin's resume).
-// Edit this file to update the site; the React client fetches it from GET /api/portfolio.
+// Edit this file to update the site; the React client imports it directly (it's also served at GET /api/portfolio).
 export const portfolio: Portfolio = {
     profile: {
         name: 'Kevin Kiplangat',
         shortName: 'Kevin',
-        roles: ['Kevin Kiplangat', 'a Data Analyst', 'in Product Operations'],
+        role: 'Data Analyst · Product Operations',
+        heroPhrases: ['decisions.', 'clear stories.', 'better products.', 'calmer Mondays.'],
         tagline: 'Turning data into decisions.',
         summary:
-            "In today's world, industries rely on data to solve problems and improve performance. I am a dedicated Data Analyst with skills in Python, SQL, Tableau, Power BI, and QA/QE tools such as Jira and Postman. I use data to uncover insights that support better decisions, efficient operations, and sustainable growth.",
+            "I'm a data analyst working in product operations at SunCulture, where solar-powered irrigation meets a lot of data. I studied statistics, spent time in the field with farmers, and now I help a product team make choices backed by real numbers.",
+        story: [
+            "I fell for numbers while studying **Statistics at Laikipia University**, mostly because they kept answering questions I didn't know how to ask yet.",
+            "My first real dataset came from **I Choose Life-Africa**, cleaning survey data for health and education programs in Laikipia. Later, at **JACE Farms**, I swapped the desk for the field: selling, advising farmers and learning that the best insight is useless if nobody on the ground can act on it.",
+            "At **Teach2Give** I sharpened the craft, building Tableau dashboards and then learning QA: testing APIs, validating databases and shipping a full-stack app to Azure. It taught me to ask \"how could this break?\" before anyone else does.",
+            "Today I'm a **Product Operations Associate at SunCulture**. I watch how people use our web and mobile apps, keep an eye on product health, and look for the boring, repeatable work we can automate so the team can focus on the interesting problems.",
+            "What ties it together: I care about numbers that someone can actually use.",
+        ],
+        now: [
+            { label: 'Working at', value: 'SunCulture, Product Operations' },
+            { label: 'Based in', value: 'Nairobi, Kenya' },
+            { label: 'Studied', value: 'Statistics, Laikipia University' },
+            { label: 'Happy to talk', value: 'Dashboards, product analytics, agri-tech' },
+        ],
+        timeZone: 'Africa/Nairobi',
         email: 'kiplangatkevin00@gmail.com',
         phone: '+254 708 459 426',
         location: 'Nairobi, Kenya',
@@ -24,6 +39,7 @@ export const portfolio: Portfolio = {
             id: 1,
             title: 'Product Operations Associate',
             company: 'SunCulture LTD',
+            logo: '/assets/images/experience/sunculture.png',
             location: 'Nairobi',
             period: 'Aug 2026 - Present',
             points: [
@@ -36,6 +52,7 @@ export const portfolio: Portfolio = {
             id: 2,
             title: 'Data and Operations Intern',
             company: 'SunCulture LTD',
+            logo: '/assets/images/experience/sunculture.png',
             location: 'Nairobi',
             period: 'Jan 2026 - Jul 2026',
             points: [
@@ -49,6 +66,7 @@ export const portfolio: Portfolio = {
             id: 3,
             title: 'QA/QE Trainee',
             company: 'Teach2Give',
+            logo: '/assets/images/experience/teach2give.jpeg',
             location: 'Nyeri',
             period: 'Sep 2025 - Dec 2025',
             points: [
@@ -61,6 +79,7 @@ export const portfolio: Portfolio = {
             id: 4,
             title: 'Tableau Data Analyst Intern',
             company: 'Teach2Give',
+            logo: '/assets/images/experience/teach2give.jpeg',
             location: 'Nyeri',
             period: 'Jan 2025 - Mar 2025',
             points: [
@@ -84,6 +103,7 @@ export const portfolio: Portfolio = {
             id: 6,
             title: 'Data Analyst Intern',
             company: 'I Choose Life-Africa',
+            logo: '/assets/images/experience/ichooselife.png',
             location: 'Laikipia County Office',
             period: 'Jul 2023 - Sep 2023',
             points: [
@@ -133,13 +153,13 @@ export const portfolio: Portfolio = {
     ],
 
     certifications: [
-        { id: 1, title: 'Certified Tableau Data Analyst Badge' },
-        { id: 2, title: 'Data Analyst in Tableau' },
-        { id: 3, title: 'Associate Data Analyst in SQL' },
-        { id: 4, title: 'Associate Data Engineer in SQL' },
-        { id: 5, title: 'ALX Professional Foundations' },
-        { id: 6, title: 'ALX AI Career Essentials' },
-        { id: 7, title: 'ALX Virtual Assistant' },
-        { id: 8, title: 'Cisco CPA – Programming Essentials in C++' },
+        { id: 1, title: 'Certified Tableau Data Analyst Badge', logo: 'tableau' },
+        { id: 2, title: 'Data Analyst in Tableau', logo: 'tableau' },
+        { id: 3, title: 'Associate Data Analyst in SQL', logo: 'sql' },
+        { id: 4, title: 'Associate Data Engineer in SQL', logo: 'sql' },
+        { id: 5, title: 'Professional Foundations', issuer: 'ALX', logo: 'alx' },
+        { id: 6, title: 'AI Career Essentials', issuer: 'ALX', logo: 'alx' },
+        { id: 7, title: 'Virtual Assistant', issuer: 'ALX', logo: 'alx' },
+        { id: 8, title: 'CPA – Programming Essentials in C++', issuer: 'Cisco Networking Academy', logo: 'cisco' },
     ],
 };

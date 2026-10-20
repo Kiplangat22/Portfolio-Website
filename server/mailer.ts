@@ -3,7 +3,12 @@ import type { ContactMessage } from '../shared/types.js';
 
 const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO } = process.env;
 
-export const isMailerConfigured = Boolean(SMTP_HOST && SMTP_USER && SMTP_PASS);
+// Names (never values) of required settings that are not set, reported by GET /api/health
+export const missingMailerVars = Object.entries({ SMTP_HOST, SMTP_USER, SMTP_PASS })
+    .filter(([, value]) => !value)
+    .map(([name]) => name);
+
+export const isMailerConfigured = missingMailerVars.length === 0;
 
 const transporter = isMailerConfigured
     ? nodemailer.createTransport({

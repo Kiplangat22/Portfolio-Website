@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { portfolio } from '../data/portfolio.js';
+import { portfolio } from '../../shared/portfolio.js';
 
 export const portfolioRouter = Router();
 
